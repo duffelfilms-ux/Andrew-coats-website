@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body class="story-body">
-<a class="story-back" href="writing.html" aria-label="Back to writing">←</a>
+<a class="story-back" href="writing.html" aria-label="Back to writing" onclick="if(document.referrer){history.back();return false;}">←</a>
 
 <main class="story-reader" id="reader" tabindex="0" aria-live="polite">
   <section class="story-screen active title-screen">
@@ -45,10 +45,14 @@ function show(n) {
   current = n;
   screens[current].classList.add('active');
 }
+function backToWriting(){
+  if(document.referrer && new URL(document.referrer).origin === location.origin){ history.back(); }
+  else { window.location.href='writing.html'; }
+}
 reader.addEventListener('click', () => {
   if (current === screens.length - 1) {
     document.body.classList.add('page-leave');
-    setTimeout(() => { window.location.href = 'writing.html'; }, 260);
+    setTimeout(backToWriting, 260);
   } else {
     show(current + 1);
   }
@@ -60,7 +64,7 @@ document.addEventListener('keydown', e => {
   if (e.key === 'ArrowLeft') {
     e.preventDefault(); show(current - 1);
   }
-  if (e.key === 'Escape') window.location.href = 'writing.html';
+  if (e.key === 'Escape') backToWriting();
 });
 reader.focus();
 </script>
