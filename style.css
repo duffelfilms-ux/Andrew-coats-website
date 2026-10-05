@@ -154,7 +154,8 @@ p {
 }
 @media (max-width: 700px) {
   .about-back { top: 20px; left: 20px; }
-  .about-poster { height: auto; width: min(88vw, 520px); }
+  .about-poster-section { padding-left: 6px; padding-right: 6px; }
+  .about-poster { height: auto; width: 98vw; max-width: 98vw; }
   .about-copy { padding: 12vh 26px 18vh; }
 }
 @media (prefers-reduced-motion: reduce) {
