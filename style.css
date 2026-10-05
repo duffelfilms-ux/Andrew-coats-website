@@ -19,10 +19,11 @@ p { max-width: 680px; font-size: 20px; line-height: 1.55; }
 @media (max-width: 700px) {
   .objects { grid-template-columns: repeat(2, 1fr); gap: 38px 24px; width:92vw; }
   .object img { width: min(155px, 34vw); }
-  .object:nth-child(1) img { width: min(172px, 38vw); }
-  .object:nth-child(2) img { width: min(220px, 48vw); }
-  .object:nth-child(3) img { width: min(194px, 43vw); }
-  .object:nth-child(4) img { width: min(155px, 34vw); }
+  .object:nth-child(1) img { width: min(155px, 34vw); }
+  .object:nth-child(2) img { width: min(232px, 51vw); }
+  .object:nth-child(3) { transform: translateX(12px); }
+  .object:nth-child(3) img { width: min(178px, 39vw); transform: rotate(-2deg); }
+  .object:nth-child(4) img { width: min(140px, 31vw); }
   .page { padding: 30px 25px 70px; }
   p { font-size: 18px; }
 }
@@ -42,7 +43,6 @@ p { max-width: 680px; font-size: 20px; line-height: 1.55; }
 @media (prefers-reduced-motion: reduce) { .about-poster { animation: none; } }
 body { transition: opacity .26s ease; }
 body.page-leave { opacity: 0; }
-/* Safari restores pages from its back/forward cache. Never save the faded state. */
 @media (prefers-reduced-motion: reduce) { body { transition: none; } }
 
 /* FILMS PAGE */
