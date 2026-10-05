@@ -1,0 +1,1 @@
+Open index.html in Safari. These four images are cropped to fit the navigation. To replace images later, crop away their surrounding black canvas first, then keep the filenames object1.jpg through object4.jpg.

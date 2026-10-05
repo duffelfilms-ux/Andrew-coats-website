@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Dentist at the End of the World — Andrew Coats</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="story-body">
+<a class="story-back" href="writing.html" aria-label="Back to writing">←</a>
+
+<main class="story-reader" id="reader" tabindex="0" aria-live="polite">
+  <section class="story-screen active title-screen">
+    <h1>THE DENTIST<br>AT THE END OF<br>THE WORLD</h1>
+    <div class="story-hint">click to begin</div>
+  </section>
+
+  <section class="story-screen passage passage-one">
+    <p>Often when sitting on his veranda the dentist would think back to the old days. He was never invited to the pow-wows with the other medical big wigs. He never had any groupies like the oncologists and brain surgeons. He had to suffer the indignities of being talked down to and shunned at the annual Health care professional beach party and he was always picked last on the mixed volley ball team.</p>
+  </section>
+
+  <section class="story-screen passage passage-two">
+    <p>Turns out that in the apocalypse the most sought after medical professional is the dentist. After the pandemic ended and the warlords roamed the scorched earth he found that a dentist was always welcome. His colleagues were rounded up and either eaten or thrown to the slave hordes but not the dentist. He would be given high fives by the most vicious of post civilisation bastards as he set to work on their fillings.</p>
+  </section>
+
+  <section class="story-screen passage passage-three">
+    <p>After a while he realised that his services were indispensable and his slow climb to power started. He became one of the most feared dentists on the open plain. People would run and hide when they heard the sound of his manually operated drill.</p>
+    <p>Later the nomadic lifestyle lost it’s appeal and the dentist settled down and built himself a mansion in the shape of a Wisdom tooth, it gleamed in the sunlight and could be seen from a distance of 50 miles away.</p>
+  </section>
+
+  <section class="story-screen passage passage-four">
+    <p>Even in his later years the dentist was always picked first for the (real head) volleyball team and hosted the best and only pow wows for miles.</p>
+    <p>Of course he didn’t want the end of civilisation to happen just so he could be popular but on the whole he was pleased with how his life turned out.</p>
+    <div class="story-end">THE END</div>
+  </section>
+</main>
+
+<script>
+const screens = [...document.querySelectorAll('.story-screen')];
+const reader = document.getElementById('reader');
+let current = 0;
+function show(n) {
+  if (n < 0 || n >= screens.length) return;
+  screens[current].classList.remove('active');
+  current = n;
+  screens[current].classList.add('active');
+}
+reader.addEventListener('click', () => {
+  if (current === screens.length - 1) {
+    document.body.classList.add('page-leave');
+    setTimeout(() => { window.location.href = 'writing.html'; }, 260);
+  } else {
+    show(current + 1);
+  }
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'Enter') {
+    e.preventDefault(); show(current + 1);
+  }
+  if (e.key === 'ArrowLeft') {
+    e.preventDefault(); show(current - 1);
+  }
+  if (e.key === 'Escape') window.location.href = 'writing.html';
+});
+reader.focus();
+</script>
+</body>
+</html>

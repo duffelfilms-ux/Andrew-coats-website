@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Jane Eyre Epilogue — Andrew Coats</title><link rel="stylesheet" href="style.css"></head>
+<body class="story-reader">
+<a class="story-back" href="writing.html" aria-label="Back to writing">←</a>
+<main class="story-stage" id="storyStage" tabindex="0" aria-live="polite">
+<section class="story-screen title-screen active"><h1>JANE EYRE<br>EPILOGUE</h1><div class="story-hint">click to begin</div></section>
+<section class="story-screen passage passage-one"><p>A few weeks after they got together Mr. Rochester started to behave like his old self again, losing his temper and moping around in a huff.</p></section>
+<section class="story-screen passage passage-two"><p>Within a month he had spent half of Jane’s fortune on trousers.</p></section>
+<section class="story-screen passage passage-three"><p>Within the year he had locked her in the attic and declared her mad. Fucking Rochester.</p><div class="story-end">THE END</div></section>
+</main>
+<script>
+const screens=[...document.querySelectorAll('.story-screen')]; let current=0;
+function show(n){if(n<0||n>=screens.length)return;screens[current].classList.remove('active');current=n;screens[current].classList.add('active');}
+function forward(){if(current===screens.length-1)window.location.href='writing.html';else show(current+1);}
+document.getElementById('storyStage').addEventListener('click',forward);
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' '||e.key==='Enter'){e.preventDefault();forward();}if(e.key==='ArrowLeft'&&current>0){e.preventDefault();show(current-1);}});
+</script></body></html>

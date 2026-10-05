@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Royal Abandonment — Andrew Coats</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="story-reader">
+<a class="story-back" href="writing.html" aria-label="Back to writing">←</a>
+<main class="story-stage" id="storyStage" tabindex="0" aria-live="polite">
+  <section class="story-screen title-screen active">
+    <h1>THE ROYAL<br>ABANDONMENT</h1>
+    <div class="story-hint">click to begin</div>
+  </section>
+
+  <section class="story-screen passage passage-one">
+    <p>When the servants left the palace they didn’t hold out much hope. The butler noted that when he was explaining to the Prince how the taps worked, the Prince wasn’t listening to him at all and seemed preoccupied with peeling an apple with a penknife.</p>
+  </section>
+
+  <section class="story-screen passage passage-two">
+    <p>The maid sobbed as she recounted that when she showed the Prince the location of the well packed pantry, the Prince seemed more interested in lacing his boots to the correct tightness.</p>
+    <p>The under footman paled as he admitted that when he showed the Prince where the TV remote was the Prince was staring at a painting of a racehorse and commenting on it’s robust hindquarters.</p>
+  </section>
+
+  <section class="story-screen passage passage-three">
+    <p>The Chauffeur pointed out that the Prince was a man of the world and he was more than capable of looking after himself but did concede that when he told His Royal Majesty the correct way to hold a telephone the Prince wandered out of the room following a wasp.</p>
+  </section>
+
+  <section class="story-screen passage passage-four">
+    <p>The housekeeper told them a harrowing tale of the Prince ignoring her advice on the operation of the washing machine by attempting to balance a hard boiled egg on his nose.</p>
+    <p>The servants looked back at the palace before they left and hoped the Prince would be okay.</p>
+    <div class="story-end">THE END</div>
+  </section>
+</main>
+<script>
+const screens=[...document.querySelectorAll('.story-screen')];
+let current=0;
+function show(n){
+  if(n<0 || n>=screens.length) return;
+  screens[current].classList.remove('active');
+  current=n;
+  screens[current].classList.add('active');
+}
+function forward(){
+  if(current===screens.length-1){ window.location.href='writing.html'; }
+  else show(current+1);
+}
+document.getElementById('storyStage').addEventListener('click', forward);
+document.addEventListener('keydown', e=>{
+  if(e.key==='ArrowRight' || e.key===' ' || e.key==='Enter'){ e.preventDefault(); forward(); }
+  if(e.key==='ArrowLeft' && current>0){ e.preventDefault(); show(current-1); }
+});
+</script>
+</body>
+</html>

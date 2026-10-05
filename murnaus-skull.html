@@ -1,0 +1,26 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Murnau’s Skull — Andrew Coats</title><link rel="stylesheet" href="style.css">
+<style>
+body.comic-reader{margin:0;background:#000;overflow:hidden}
+.comic-back{position:fixed;left:28px;top:22px;z-index:20;color:#aaa;text-decoration:none;font-size:26px;opacity:.72}
+.comic-stage{width:100vw;height:100vh;display:flex;align-items:center;justify-content:center;cursor:pointer;user-select:none}
+.comic-page{display:none;max-width:94vw;max-height:94vh;width:auto;height:auto;object-fit:contain}
+.comic-page.active{display:block;animation:fade .28s ease}
+.comic-count{position:fixed;right:26px;bottom:20px;color:#777;font-family:Avenir,"Avenir Next","Century Gothic",sans-serif;font-size:12px;letter-spacing:.12em}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+</style></head><body class="comic-reader">
+<a class="comic-back" href="writing.html" aria-label="Back">←</a>
+<main class="comic-stage" id="stage">
+<img class="comic-page active" src="images/murnau-1.png" alt="Murnau's Skull page 1">
+<img class="comic-page" src="images/murnau-2.png" alt="Murnau's Skull page 2">
+<img class="comic-page" src="images/murnau-3.png" alt="Murnau's Skull page 3">
+<img class="comic-page" src="images/murnau-4.png" alt="Murnau's Skull page 4">
+</main><div class="comic-count" id="count">1 / 4</div>
+<script>
+const p=[...document.querySelectorAll('.comic-page')],c=document.getElementById('count');let i=0;
+function show(n){if(n<0||n>=p.length)return;p[i].classList.remove('active');i=n;p[i].classList.add('active');c.textContent=(i+1)+' / '+p.length}
+function next(){if(i===p.length-1)location.href='writing.html';else show(i+1)}
+document.getElementById('stage').onclick=next;
+document.onkeydown=e=>{if(e.key==='ArrowRight'||e.key===' '||e.key==='Enter'){e.preventDefault();next()}if(e.key==='ArrowLeft'&&i>0){e.preventDefault();show(i-1)}};
+</script></body></html>
