@@ -31,11 +31,11 @@ p { max-width: 680px; font-size: 20px; line-height: 1.55; }
 .about-back:hover { color: #fff; transform: translateX(-3px); }
 .about-poster-section { min-height: 100vh; display: flex; position: relative; align-items: center; justify-content: center; padding: 4vh 24px 7vh; }
 .about-poster { display: block; width: auto; height: min(88vh, 820px); max-width: 92vw; object-fit: contain; animation: aboutFade .75s ease both; }
-.scroll-cue { position: absolute; bottom: 22px; left: 50%; transform: translateX(-50%); color: #555; font: 24px/1 Georgia, "Times New Roman", serif; }
+.scroll-cue { position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%); color: #aaa; font: 34px/1 Avenir,"Avenir Next","Century Gothic",sans-serif; opacity: .9; }
 .about-copy { min-height: 72vh; max-width: 720px; margin: 0 auto; padding: 13vh 32px 20vh; display: flex; align-items: flex-start; }
 .about-copy p { margin: 0; color: #ddd; font-size: clamp(20px, 2.1vw, 28px); line-height: 1.55; }
 @keyframes aboutFade { from { opacity: 0; transform: scale(.985); } to { opacity: 1; transform: scale(1); } }
-@media (max-width: 700px) { .about-back { top: 20px; left: 20px; } .about-poster-section { padding-left: 6px; padding-right: 6px; } .about-poster { height: auto; width: 98vw; max-width: 98vw; } .about-copy { padding: 12vh 26px 18vh; } }
+@media (max-width: 700px) { .about-back { top: 20px; left: 20px; } .about-poster-section { padding-left: 6px; padding-right: 6px; padding-bottom: 72px; } .about-poster { height: auto; width: 98vw; max-width: 98vw; } .scroll-cue { bottom: 22px; font-size: 38px; color:#bbb; } .about-copy { padding: 12vh 26px 18vh; } }
 @media (prefers-reduced-motion: reduce) { .about-poster { animation: none; } }
 body { transition: opacity .26s ease; }
 body.page-leave { opacity: 0; }
