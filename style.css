@@ -39,6 +39,7 @@ p { max-width: 680px; font-size: 20px; line-height: 1.55; }
 @media (prefers-reduced-motion: reduce) { .about-poster { animation: none; } }
 body { transition: opacity .26s ease; }
 body.page-leave { opacity: 0; }
+/* Safari restores pages from its back/forward cache. Never save the faded state. */
 @media (prefers-reduced-motion: reduce) { body { transition: none; } }
 
 /* FILMS PAGE */
