@@ -17,6 +17,12 @@
 </main>
 
 <script>
+// Safari can restore the homepage from its back/forward cache with the
+// outgoing fade still applied. Always restore the visible state on return.
+window.addEventListener('pageshow', () => {
+  document.body.classList.remove('page-leave');
+});
+
 document.querySelectorAll('.object').forEach(link => {
   link.addEventListener('click', event => {
     if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
