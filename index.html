@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Andrew Coats</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="home">
+  <nav class="objects" aria-label="Main navigation">
+    <a class="object" href="about.html" aria-label="About"><img src="images/object1.jpg" alt="About"></a>
+    <a class="object" href="films.html" aria-label="Films"><img src="images/object2.png" alt="Films"></a>
+    <a class="object" href="writing.html" aria-label="Writing"><img src="images/object3.jpg" alt="Writing"></a>
+    <a class="object" href="contact.html" aria-label="Contact"><img src="images/object4.jpg" alt="Contact"></a>
+  </nav>
+</main>
+
+<script>
+document.querySelectorAll('.object').forEach(link => {
+  link.addEventListener('click', event => {
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    document.body.classList.add('page-leave');
+    setTimeout(() => { window.location.href = link.href; }, 260);
+  });
+});
+</script>
+
+</body>
+</html>
