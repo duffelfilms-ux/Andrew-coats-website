@@ -17,9 +17,12 @@ body { font-family: Georgia, "Times New Roman", serif; overflow-x: hidden; }
 h1 { font-size: clamp(42px, 8vw, 90px); font-weight: normal; line-height: .95; margin: 0 0 30px; }
 p { max-width: 680px; font-size: 20px; line-height: 1.55; }
 @media (max-width: 700px) {
-  .objects { grid-template-columns: repeat(2, 1fr); gap: 55px 30px; }
+  .objects { grid-template-columns: repeat(2, 1fr); gap: 38px 24px; width:92vw; }
   .object img { width: min(155px, 34vw); }
-  .object:nth-child(2) img { width: min(245px, 53vw); }
+  .object:nth-child(1) img { width: min(172px, 38vw); }
+  .object:nth-child(2) img { width: min(220px, 48vw); }
+  .object:nth-child(3) img { width: min(194px, 43vw); }
+  .object:nth-child(4) img { width: min(155px, 34vw); }
   .page { padding: 30px 25px 70px; }
   p { font-size: 18px; }
 }
