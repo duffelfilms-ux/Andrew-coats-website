@@ -32,7 +32,7 @@ p { max-width: 680px; font-size: 20px; line-height: 1.55; }
 /* ABOUT PAGE */
 .about-body { background: #050505; margin: 0; }
 .about-page { min-height: 100vh; background: #050505; }
-.about-back { position: fixed; z-index: 10; top: 28px; left: 32px; color: #777; text-decoration: none; font: 28px/1 Georgia, "Times New Roman", serif; transition: color .25s ease, transform .25s ease; }
+.about-back { position: fixed; z-index: 100; top: 28px; left: 32px; color: #bbb; text-decoration: none; font: 28px/1 Georgia, "Times New Roman", serif; transition: color .25s ease, transform .25s ease; }
 .about-back:hover { color: #fff; transform: translateX(-3px); }
 .about-poster-section { min-height: 100vh; display: flex; position: relative; align-items: center; justify-content: center; padding: 4vh 24px 7vh; }
 .about-poster { display: block; width: auto; height: min(88vh, 820px); max-width: 92vw; object-fit: contain; animation: aboutFade .75s ease both; }
