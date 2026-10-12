@@ -15,4 +15,4 @@ function show(n){if(n<0||n>=screens.length)return;screens[current].classList.rem
 function forward(){if(current===screens.length-1)window.location.href='writing.html';else show(current+1);}
 document.getElementById('storyStage').addEventListener('click',forward);
 document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' '||e.key==='Enter'){e.preventDefault();forward();}if(e.key==='ArrowLeft'&&current>0){e.preventDefault();show(current-1);}});
-</script></body></html>
+</script><script src="story-swipe.js"></script></body></html>
