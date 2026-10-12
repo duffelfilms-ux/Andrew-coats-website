@@ -23,4 +23,4 @@ function show(n){if(n<0||n>=p.length)return;p[i].classList.remove('active');i=n;
 function next(){if(i===p.length-1)location.href='writing.html';else show(i+1)}
 document.getElementById('stage').onclick=next;
 document.onkeydown=e=>{if(e.key==='ArrowRight'||e.key===' '||e.key==='Enter'){e.preventDefault();next()}if(e.key==='ArrowLeft'&&i>0){e.preventDefault();show(i-1)}};
-</script></body></html>
+</script><script src="story-swipe.js"></script></body></html>
